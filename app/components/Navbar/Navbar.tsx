@@ -1,4 +1,6 @@
 
+
+
 import Container from "../Container";
 import Categories from "./Categories";
 import Logo from "./Logo";
@@ -10,7 +12,7 @@ import { SafeUser } from "@/app/types";
 interface NavbarProps {
     currentUser?: SafeUser | null;
     }
-
+    
 const Navbar: React.FC<NavbarProps> = ({
         currentUser,
     }) => {
@@ -24,13 +26,14 @@ const Navbar: React.FC<NavbarProps> = ({
                         items-center 
                         justify-between
                         gap-4 md:gap-0">
-                    
-                    <div className="text-lg 
+                    <Logo />
+                    {/* <div className="text-lg 
                     font-mono
                     italic
-                    px-6
+                    px-0                   
                     cursor-pointer
-                    text-cyan-800">Travel-Buddy</div>
+                    text-cyan-800" ></div> */}
+                    
                     <Search />
                     <UserMenu  currentUser={currentUser}/>
 

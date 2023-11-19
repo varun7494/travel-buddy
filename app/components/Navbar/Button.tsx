@@ -3,29 +3,27 @@
 import { IconType } from "react-icons";
 
 interface ButtonProps {
-    label: string;
-    onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
-    disabled?: boolean;
-    outline?: boolean;
-    small?: boolean;
-    icon?: IconType;
+  label: string;
+  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  disabled?: boolean;
+  outline?: boolean;
+  small?: boolean;
+  icon?: IconType;
 }
 
 const Button: React.FC<ButtonProps> = ({ 
-    label, 
-    onClick, 
-    disabled, 
-    outline,
-    small,
-    icon: Icon,
+  label, 
+  onClick, 
+  disabled, 
+  outline,
+  small,
+  icon: Icon,
 }) => {
-
-
-    return ( 
-        <button 
-        disabled={disabled}
-        onClick={onClick}
-        className={`
+  return ( 
+    <button
+      disabled={disabled}
+      onClick={onClick}
+      className={`
         relative
         disabled:opacity-70
         disabled:cursor-not-allowed
@@ -40,20 +38,21 @@ const Button: React.FC<ButtonProps> = ({
         ${small ? 'py-1' : 'py-3'}
         ${small ? 'font-light' : 'font-semibold'}
         ${small ? 'border-[1px]' : 'border-2'}
-    `}
+      `}
     >
-        {Icon && (
+      {Icon && (
         <Icon
-            size={24}
-            className="
+          size={24}
+          className="
             absolute
             left-3
             top-2
-            "
+          "
         />
-        )}
-    {label}</button>
-    );
+      )}
+      {label}
+    </button>
+   );
 }
-
+ 
 export default Button;

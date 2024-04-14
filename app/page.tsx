@@ -8,6 +8,7 @@ import getListings, {
 import getCurrentUser from "@/app/actions/getCurrentUser";
 import ClientOnly from "./components/ClientOnly";
 
+
 interface HomeProps {
   searchParams: IListingsParams
 };
@@ -38,6 +39,7 @@ const Home = async ({ searchParams }: HomeProps) => {
             xl:grid-cols-5
             2xl:grid-cols-6
             gap-8
+            
           "
         >
           {listings.map((listing: any) => (
@@ -49,6 +51,7 @@ const Home = async ({ searchParams }: HomeProps) => {
           ))}
         </div>
       </Container>
+      
     </ClientOnly>
   )
 }

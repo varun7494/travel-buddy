@@ -10,6 +10,7 @@ import LoginModal from './components/Modals/LoginModal'
 import getCurrentUser from './actions/getCurrentUser'
 import RentModal from './components/Modals/RentModal'
 import SearchModal from './components/Modals/SearchModal'
+import ViewSwitchBadge from './components/ViewSwitchBadge'
 
 
 const inter = Nunito({ subsets: ['latin'] })
@@ -37,10 +38,11 @@ export default async function RootLayout({
           <LoginModal/>
           <SearchModal/>
           <RentModal />
+          
           <RegisterModal/>
           <Navbar currentUser ={currentUser}/>
         </ClientOnly>
-        <div className='pb-20 pt-28'>
+        <div className='pb-20 pt-28 '>
         {children}
         </div>
       </body>

@@ -48,14 +48,15 @@ const UserMenu: React.FC<UserMenuProps> = ({
           className="
             hidden
             md:block
-            text-sm 
+            text-md 
             font-semibold 
             py-3 
             px-4 
             rounded-full 
-            hover:bg-neutral-100 
+            hover:bg-cyan-500 
             transition 
             cursor-pointer
+            
           "
         >
         Add Your Home
@@ -74,7 +75,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
           gap-3 
           rounded-full 
           cursor-pointer 
-          hover:shadow-md 
+          hover:bg-cyan-500 
           transition
           "
         >
@@ -96,7 +97,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
             overflow-hidden 
             right-0 
             top-12 
-            text-sm
+            text-md
           "
         >
           <div className="flex flex-col cursor-pointer">
@@ -119,7 +120,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
                   onClick={() => router.push('/properties')}
                 />
                 <MenuItem 
-                  label="Add Your Home" 
+                  label="Add Your House" 
                   onClick={rentModal.onOpen}
                 />
                 <hr />

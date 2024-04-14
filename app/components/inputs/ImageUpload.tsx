@@ -7,7 +7,7 @@ import { TbPhotoPlus } from 'react-icons/tb'
 
 
 declare global {
-  var cloudinary: any;
+  var cloudinary: "dqf6q3peh";
 }
 
 const uploadPreset = "p5s02z3b";
@@ -36,7 +36,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
       {({ open }) => {
         return (
           <div
-            onClick={() => open()}
+            onClick={() => open?.()}
             className="
               relative
               cursor-pointer

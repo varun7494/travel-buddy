@@ -2,11 +2,11 @@
 
 import qs from 'query-string';
 import dynamic from 'next/dynamic'
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useState } from "react";
 import { Range } from 'react-date-range';
 import { formatISO } from 'date-fns';
 import { useRouter, useSearchParams } from 'next/navigation';
-
+import { useMemo } from 'react';
 import useSearchModal from "@/app/hooks/useSearchModal";
 
 import Modal from "./Modal";
@@ -42,7 +42,7 @@ const SearchModal = () => {
 
   const Map = useMemo(() => dynamic(() => import('../Map'), { 
     ssr: false 
-  }), [location]);
+  }), []);
 
   const onBack = useCallback(() => {
     setStep((value) => value - 1);

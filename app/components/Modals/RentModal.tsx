@@ -9,8 +9,8 @@ import {
 } from 'react-hook-form';
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/navigation';
-import { useMemo, useState } from "react";
-
+import {  useState } from "react";
+import { useMemo } from 'react';
 import useRentModal from '@/app/hooks/useRentModal';
 
 import Modal from "./Modal";
@@ -73,7 +73,7 @@ const RentModal = () => {
 
   const Map = useMemo(() => dynamic(() => import('../Map'), { 
     ssr: false 
-  }), [location]);
+  }), []);
 
 
   const setCustomValue = (id: string, value: any) => {

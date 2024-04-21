@@ -18,7 +18,7 @@ import ClientOnly from "../ClientOnly";
 import { Reservation } from "@prisma/client";
 
 interface ListingCardProps {
-  data: SafeListing;
+  data:  SafeListing;
   reservation?: Reservation;
   onAction?: (id: string) => void;
   disabled?: boolean;

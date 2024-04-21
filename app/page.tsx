@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic'
 import Container from "@/app/components/Container";
 import ListingCard from "@/app/components/listings/ListingCard";
 import EmptyState from "@/app/components/EmptyState";
@@ -7,7 +8,6 @@ import getListings, {
 } from "@/app/actions/getListings";
 import getCurrentUser from "@/app/actions/getCurrentUser";
 import ClientOnly from "./components/ClientOnly";
-
 
 interface HomeProps {
   searchParams: IListingsParams
@@ -39,7 +39,6 @@ const Home = async ({ searchParams }: HomeProps) => {
             xl:grid-cols-5
             2xl:grid-cols-6
             gap-8
-            
           "
         >
           {listings.map((listing: any) => (
@@ -51,7 +50,6 @@ const Home = async ({ searchParams }: HomeProps) => {
           ))}
         </div>
       </Container>
-      
     </ClientOnly>
   )
 }

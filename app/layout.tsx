@@ -1,27 +1,24 @@
-import type { Metadata } from 'next'
 import { Nunito } from 'next/font/google'
+
+import Navbar from './components/Navbar/Navbar';
+import LoginModal from './components/Modals/LoginModal';
+import RegisterModal from './components/Modals/RegisterModal';
+import SearchModal from './components/Modals/SearchModal';
+import RentModal from './components/Modals/RentModal';
+
+import ToasterProvider from '@/app/providers/ToasterProvider';
+
 import './globals.css'
-import Navbar from './components/Navbar/Navbar'
+import ClientOnly from './components/ClientOnly';
+import getCurrentUser from './actions/getCurrentUser';
 
-import ClientOnly from './components/ClientOnly'
-import RegisterModal from './components/Modals/RegisterModal'
-import ToasterProvider from './providers/ToasterProvider'
-import LoginModal from './components/Modals/LoginModal'
-import getCurrentUser from './actions/getCurrentUser'
-import RentModal from './components/Modals/RentModal'
-import SearchModal from './components/Modals/SearchModal'
-import ViewSwitchBadge from './components/ViewSwitchBadge'
-
-
-const inter = Nunito({ subsets: ['latin'] })
-
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Travel-Buddy',
   description: 'Travel Website',
 }
 
-const font = Nunito({
-  subsets: ['latin'],
+const font = Nunito({ 
+  subsets: ['latin'], 
 });
 
 export default async function RootLayout({
@@ -30,20 +27,20 @@ export default async function RootLayout({
   children: React.ReactNode
 }) {
   const currentUser = await getCurrentUser();
+
   return (
     <html lang="en">
       <body className={font.className}>
         <ClientOnly>
-          <ToasterProvider/>
-          <LoginModal/>
-          <SearchModal/>
+          <ToasterProvider />
+          <LoginModal />
+          <RegisterModal />
+          <SearchModal />
           <RentModal />
-          
-          <RegisterModal/>
-          <Navbar currentUser ={currentUser}/>
+          <Navbar currentUser={currentUser} />
         </ClientOnly>
-        <div className='pb-20 pt-28 '>
-        {children}
+        <div className="pb-20 pt-28">
+          {children}
         </div>
       </body>
     </html>
